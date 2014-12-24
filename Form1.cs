@@ -72,7 +72,7 @@ namespace Translator
                 string languageCode = s.Substring(0,2);
                 if (!actuallanguageTranslations.Keys.Contains(languageCode))
                 {
-                    string uri = "http://api.microsofttranslator.com/v2/Http.svc/Translate?text=" + System.Web.HttpUtility.UrlEncode(txtToTranslate) + "&from=en&to=" + s.Substring(0, 2);
+                    string uri = "http://api.microsofttranslator.com/v2/Http.svc/Translate?text=" + System.Web.HttpUtility.UrlEncode(txtToTranslate) + "&from=en&to=" + languageCode;
                     System.Net.WebRequest translationWebRequest = System.Net.WebRequest.Create(uri);
                     translationWebRequest.Headers.Add("Authorization", headerValue);
                     System.Net.WebResponse response = null;
