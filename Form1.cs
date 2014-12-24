@@ -120,5 +120,10 @@ namespace Translator
         {
             System.Diagnostics.Process.Start("http://blogs.msdn.com/b/translation/p/gettingstarted1.aspx");
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Save();
+        }
     }
 }

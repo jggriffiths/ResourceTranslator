@@ -41,9 +41,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this._txtClientID = new System.Windows.Forms.TextBox();
-            this._txtClientSecret = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this._txtClientSecret = new System.Windows.Forms.TextBox();
+            this._txtClientID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -173,20 +173,6 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "MS Client Secret:";
             // 
-            // _txtClientID
-            // 
-            this._txtClientID.Location = new System.Drawing.Point(90, 352);
-            this._txtClientID.Name = "_txtClientID";
-            this._txtClientID.Size = new System.Drawing.Size(256, 20);
-            this._txtClientID.TabIndex = 14;
-            // 
-            // _txtClientSecret
-            // 
-            this._txtClientSecret.Location = new System.Drawing.Point(480, 352);
-            this._txtClientSecret.Name = "_txtClientSecret";
-            this._txtClientSecret.Size = new System.Drawing.Size(256, 20);
-            this._txtClientSecret.TabIndex = 15;
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -197,6 +183,24 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Get Info...";
             this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
+            // 
+            // _txtClientSecret
+            // 
+            this._txtClientSecret.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Translator.Properties.Settings.Default, "MSClientSecret", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this._txtClientSecret.Location = new System.Drawing.Point(480, 352);
+            this._txtClientSecret.Name = "_txtClientSecret";
+            this._txtClientSecret.Size = new System.Drawing.Size(256, 20);
+            this._txtClientSecret.TabIndex = 15;
+            this._txtClientSecret.Text = global::Translator.Properties.Settings.Default.MSClientSecret;
+            // 
+            // _txtClientID
+            // 
+            this._txtClientID.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Translator.Properties.Settings.Default, "MSClientID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this._txtClientID.Location = new System.Drawing.Point(90, 352);
+            this._txtClientID.Name = "_txtClientID";
+            this._txtClientID.Size = new System.Drawing.Size(256, 20);
+            this._txtClientID.TabIndex = 14;
+            this._txtClientID.Text = global::Translator.Properties.Settings.Default.MSClientID;
             // 
             // Form1
             // 
@@ -221,6 +225,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

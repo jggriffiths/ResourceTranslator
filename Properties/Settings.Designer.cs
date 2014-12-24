@@ -22,5 +22,29 @@ namespace Translator.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MSClientID {
+            get {
+                return ((string)(this["MSClientID"]));
+            }
+            set {
+                this["MSClientID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MSClientSecret {
+            get {
+                return ((string)(this["MSClientSecret"]));
+            }
+            set {
+                this["MSClientSecret"] = value;
+            }
+        }
     }
 }
