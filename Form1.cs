@@ -64,6 +64,7 @@ namespace Translator
             string txtToTranslate = _txtEnglish.Text;
             Dictionary<string, string> translations = new Dictionary<string, string>();
             Dictionary<string, string> actuallanguageTranslations = new Dictionary<string, string>();
+            actuallanguageTranslations.Add("en", _txtEnglish.Text);
             string template = "<data name=\"{0}\" xml:space=\"preserve\">\r\n\t<value>{1}</value>\r\n\t<comment>UNOFFICIAL_TRANSLATION</comment>\r\n</data>";
             StringBuilder result = new StringBuilder();
             foreach (string s in _lstLanguages.CheckedItems)
