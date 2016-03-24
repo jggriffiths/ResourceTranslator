@@ -102,15 +102,15 @@ namespace Translator
                     if (File.Exists(fileName))
                     {
                         List<string> lines = new List<string>(File.ReadAllLines(fileName));
-                        int x = lines.Count - 1;
-                        for (; x > 0; x--)
+                        int x;
+                        for (x = lines.Count - 1; x > 0; x--)
                         {
                             if (lines[x].Trim().StartsWith("</root>"))
                             {
                                 break;
                             }
                         }
-                        lines.Insert(x - 1, translation.Value);
+                        lines.Insert(x, translation.Value);
                         File.WriteAllLines(fileName, lines.ToArray());
                     }
                 }
